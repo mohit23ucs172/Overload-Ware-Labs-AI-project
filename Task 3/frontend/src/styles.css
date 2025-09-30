@@ -1,0 +1,262 @@
+:root {
+  --bg: #181a20;
+  --card: #23243a;
+  --accent: #7f5af0;
+  --accent-light: #5fbbfc;
+}
+
+/* Reset and ensure no white fallback */
+html, body, #root {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  background: #0a0a0f !important; /* DARK fallback for fireflies theme */
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Additional full-screen reset for profile page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure no white borders on any element */
+html {
+  background: #0a0a0f !important;
+}
+
+body {
+  background: #0a0a0f !important;
+}
+
+/* Safe reset */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Override any background for fireflies theme */
+body {
+  background: #0a0a0f !important;
+  background-size: 400% 400%;
+}
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* App container */
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  background: transparent;
+}
+
+/* Dashboard */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 24px 24px;
+  background: rgba(24,26,32,0.95);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+.dashboard-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  text-align: center;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 32px 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Cards */
+.cards-row {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.card {
+  background: linear-gradient(135deg, #23243a 60%, #2d2f4a 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  padding: 32px 24px;
+  min-width: 280px;
+  max-width: 340px;
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.card-progress {
+  width: 90%;
+  height: 8px;
+  background: #23243a;
+  border-radius: 4px;
+  margin: 12px 0 0 0;
+  overflow: hidden;
+}
+
+.card-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+  border-radius: 4px;
+}
+
+.view-details-btn {
+  margin-top: 18px;
+  padding: 10px 24px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(127,90,240,0.15);
+}
+.view-details-btn:hover {
+  box-shadow: 0 4px 16px rgba(127,90,240,0.25);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Auth forms */
+.auth input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #23243a;
+  color: #fff;
+}
+
+/* Buttons */
+button {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+button:hover {
+  transform: translateY(-2px);
+}
+button.secondary {
+  background: #444;
+  color: #ddd;
+}
+button.danger {
+  background: #ef4444;
+}
+
+/* Chat UI */
+.chat-wrap {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.sidebar {
+  width: 220px;
+  border-right: 1px solid #333;
+  padding-right: 12px;
+}
+.sidebar .list {
+  margin-top: 8px;
+}
+
+.conv {
+  display: flex;
+  flex-direction: column;
+  height: 480px;
+}
+.msgs {
+  flex: 1;
+  overflow: auto;
+  padding: 8px;
+}
+.msg {
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  max-width: 80%;
+}
+.msg.user {
+  background: #2d3b6e;
+  align-self: flex-end;
+}
+.msg.bot {
+  background: #2d4a3a;
+  align-self: flex-start;
+}
+.composer {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+}
+.composer input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #23243a;
+  color: #fff;
+}
+.conv .who {
+  font-size: 11px;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #23243a;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 8px;
+}

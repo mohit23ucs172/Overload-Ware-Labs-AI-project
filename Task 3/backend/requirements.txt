@@ -1,0 +1,12 @@
+Flask
+Flask-Cors
+Flask-JWT-Extended
+SQLAlchemy
+Flask-PyMongo
+python-dotenv
+flasgger
+pymongo
+Werkzeug
+python-dateutil
+loguru
+gunicorn
